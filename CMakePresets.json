@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20
+    },
+    "configurePresets": [
+        {
+            "name": "build",
+            "displayName": "Build for NRF7002 DK NRF5340 application MCU",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "NCS_TOOLCHAIN_VERSION": "NONE",
+                "BOARD": "nrf7002dk_nrf5340_cpuapp",
+                "BOARD_ROOT": "${sourceDir}/",
+                "CONFIG_DEBUG_OPTIMIZATIONS": "y",
+                "CONFIG_DEBUG_THREAD_INFO": "y",
+                "CONF_FILE": "${sourceDir}/prj.conf"
+            }
+        }
+    ]
+}

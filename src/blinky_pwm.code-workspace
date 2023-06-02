@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"name": "blinky_pwm",
+			"path": ".."
+		},
+		{
+			"name": "icm42605",
+			"path": "../../icm42605"
+		},
+		{
+			"name": "blinky",
+			"path": "../../blinky"
+		},
+		{
+			"name": "nrf5340_audio",
+			"path": "../../nrf5340_audio"
+		},
+		{
+			"name": "adt7420",
+			"path": "../../adt7420"
+		},
+		{
+			"path": "../../bt-fund"
+		},
+		{
+			"name": "central_uart",
+			"path": "../../central_uart"
+		},
+		{
+			"name": "peripheral_uart1",
+			"path": "../../peripheral_uart1"
+		}
+	],
+	"settings": {
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.3.0}",
+		"files.associations": {
+			"pwm.h": "c",
+			"spi.h": "c",
+			"printk.h": "c",
+			"device.h": "c"
+		}
+	}
+}
