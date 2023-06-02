@@ -1,7 +1,7 @@
 .. _blink-led-sample:
 .. _pwm-blinky-sample:
 
-PWM Blinky
+nrf5340DroneCode
 ##########
 
 Overview
