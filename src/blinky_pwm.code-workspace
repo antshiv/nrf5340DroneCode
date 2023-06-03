@@ -30,15 +30,26 @@
 		{
 			"name": "peripheral_uart1",
 			"path": "../../peripheral_uart1"
+		},
+		{
+			"name": "hello_world",
+			"path": "../../hello_world"
+		},
+		{
+			"name": "button",
+			"path": "../../button"
 		}
 	],
 	"settings": {
-		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.3.0}",
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.4.0}",
 		"files.associations": {
 			"pwm.h": "c",
 			"spi.h": "c",
 			"printk.h": "c",
-			"device.h": "c"
-		}
+			"device.h": "c",
+			"includes.h": "c",
+			"ble_nus_local.h": "c"
+		},
+		"nrf-connect.topdir": "${nrf-connect.sdk:2.4.0}"
 	}
 }

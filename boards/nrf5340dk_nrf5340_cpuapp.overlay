@@ -6,6 +6,9 @@
  #include "nrf5340_cpuapp_common-pinctrl.overlay"
 
 / {
+    chosen {
+		nordic,nus-uart = &uart0;
+	};
      pwmleds {
          compatible = "pwm-leds";
          pwm_led0: pwm_led_0 {
@@ -30,16 +33,21 @@
         };
     };
 
-    chosen {
-		nordic,nus-uart = &cdc_acm_uart1;
-	};
-    
+    buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			gpios = <&gpio0 04 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "Push button 1";
+        };
+    };
+
      aliases {
         pwm-led0 = &pwm_led0;
         pwm-led1 = &pwm_led1;
         pwm-led2 = &pwm_led2;
         pwm-led3 = &pwm_led3;
         spi4-cs = &spi4_cs;
+		sw0 = &button0;
      };
 
 };
@@ -89,6 +97,14 @@ my_spi_slave: &spi3 {
 	cdc_acm_uart1: cdc_acm_uart1 {
 		compatible = "zephyr,cdc-acm-uart";
 	};
+};
+
+&uart0 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-1 = <&uart0_sleep>;
+	pinctrl-names = "default", "sleep";
 };
 
 /*
