@@ -8,6 +8,7 @@ target_sources(app PRIVATE src/main.c)
 target_sources(app PRIVATE src/drivers/PWM/pwm_local.c)
 target_sources(app PRIVATE src/drivers/SPIM/spim_local.c)
 target_sources(app PRIVATE src/drivers/SPIS/spis_local.c)
+target_sources(app PRIVATE src/drivers/I2C/i2c_local.c)
 target_sources(app PRIVATE src/drivers/GPIO_INPUT/gpio_input_local.c)
 target_sources(app PRIVATE src/drivers/BLE_NUS/ble_nus_local.c)
 

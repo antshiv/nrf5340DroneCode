@@ -12,16 +12,12 @@
 #include "drivers/PWM/pwm_local.h"
 #include "drivers/SPIM/spim_local.h"
 #include "drivers/SPIS/spis_local.h"
+#include "drivers/I2C/i2c_local.h"
 #include "drivers/GPIO_INPUT/gpio_input_local.h"
 #include "drivers/BLE_NUS/ble_nus_local.h"
 
 #define SLEEP_TIME_MS 1
 
-/*
- * Initialize the device driver for I2C_0
- */
-#define I2C0_NODE DT_NODELABEL(mysensor)
-static const struct i2c_dt_spec dev_i2c = I2C_DT_SPEC_GET(I2C0_NODE);
 
 /*
  * Initialize the device driver for SPI_4
@@ -110,16 +106,6 @@ void spi_test_send(void)
 } */
 /*******************END OLD SPI ******************************/
 
-static void i2c_test_write()
-{
-	int ret;
-	uint8_t config[2] = {0x03, 0x8C};
-	ret = i2c_write_dt(&dev_i2c, config, sizeof(config));
-	if (ret != 0)
-	{
-		printk("Failed to write to I2C device address %x at reg. %x n", dev_i2c.addr, config[0]);
-	}
-}
 
 /***************Peri BLE   UART   ****************/
 
